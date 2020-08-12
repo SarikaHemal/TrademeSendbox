@@ -128,7 +128,7 @@ public class UsedCarsSteps extends TestBase {
 						
 						String img = CommonUtils.takeScreenShot(base.driver, "Kias");
 						stepTest.fail("Kia's car not exists").addScreenCaptureFromPath(img);
-						System.out.println("Test pass Kia's car not exists");
+						System.out.println("Test fail Kia's car not exists");
 						Assert.assertEquals("Kia's car not exists","(1)",carTotal.getText());
 						flag = true;
 						break;

@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 7370576500,
+  "duration": 7658398300,
   "status": "passed"
 });
 formatter.scenario({
@@ -48,36 +48,36 @@ formatter.match({
   "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
 });
 formatter.result({
-  "duration": 1975101700,
+  "duration": 2069450200,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_Motors_tab()"
 });
 formatter.result({
-  "duration": 3012590700,
+  "duration": 6068043400,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_on_Used_cars_link()"
 });
 formatter.result({
-  "duration": 3370886000,
+  "duration": 3372061900,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_can_see_at_least_one_list_car()"
 });
 formatter.result({
-  "duration": 1877802200,
+  "duration": 1956212700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 5475078100,
+  "duration": 5521756600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5312374200,
+  "duration": 5282740800,
   "status": "passed"
 });
 formatter.scenario({
@@ -118,37 +118,37 @@ formatter.match({
   "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
 });
 formatter.result({
-  "duration": 1716883000,
+  "duration": 1851456500,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_Motors_tab()"
 });
 formatter.result({
-  "duration": 2149474700,
+  "duration": 2272547200,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_on_Used_cars_link()"
 });
 formatter.result({
-  "duration": 3364338400,
+  "duration": 3388855400,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.kia_s_car_should_be_listed_in_categories()"
 });
 formatter.result({
-  "duration": 1705514500,
+  "duration": 1948177800,
   "error_message": "org.junit.ComparisonFailure: Kia\u0027s car not exists expected:\u003c([1])\u003e but was:\u003c([0])\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat StepDefinitions.UsedCarsSteps.kia_s_car_should_be_listed_in_categories(UsedCarsSteps.java:132)\r\n\tat ✽.Then Kia’s car should be listed in categories(C:/RecruitITTest/TradeMeSendbox/src/main/java/Features/UsedcarFeature.feature:15)\r\n",
   "status": "failed"
 });
 formatter.after({
-  "duration": 5318409600,
+  "duration": 5266988100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5281440800,
+  "duration": 5223424300,
   "status": "passed"
 });
 formatter.scenario({
@@ -212,39 +212,39 @@ formatter.match({
   "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
 });
 formatter.result({
-  "duration": 1744726600,
+  "duration": 1679620300,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_Motors_tab()"
 });
 formatter.result({
-  "duration": 2157562900,
+  "duration": 2956670100,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_on_Used_cars_link()"
 });
 formatter.result({
-  "duration": 3393628100,
+  "duration": 3370182000,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_search_first_Mazda_used_car()"
 });
 formatter.result({
-  "duration": 5177788400,
+  "duration": 16242896400,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.all_following_details_should_be_displayed(DataTable)"
 });
 formatter.result({
-  "duration": 91514125400,
+  "duration": 91556366000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 5174213900,
+  "duration": 5363846500,
   "status": "passed"
 });
 });

@@ -10,29 +10,28 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>5.3.0</version>
-				<executions>
-					<execution>
-						<id>execution</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<projectName>TradeMeSendbox</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+	
+			<build>
+    <plugins>
+        <plugin>
+            
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.5.1</version>
+            <executions>
+                <execution>
+                </execution>
+            </executions>
+            <configuration>
+              <source>1.8</source>
+              <target>1.8</target>
+            </configuration>
+
+        
+        </plugin>
+    </plugins>
+</build>
+		
 
 	<dependencies>
 		
@@ -116,11 +115,9 @@
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
-			<version>1.2.6</version>
+			<version>1.2.4</version>
 			<type>pom</type>
 		</dependency>
-
-
 
 
 	</dependencies>

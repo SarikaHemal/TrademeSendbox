@@ -173,41 +173,53 @@ public class UsedCarsSteps extends TestBase {
 
 	}
 
-	@When("^I click on any existing car$")
-	public void i_click_on_any_existing_car() throws Throwable {
+	
+	@When("^I search first Mazda used car$")
+	public void i_search_first_Mazda_used_car() throws Throwable {
 		stepTest=extent.createTest("I click on any existing car");
-		base.driver.findElement(By.xpath("(//a[contains(.,'Used cars')])[3]")).click();
-		Thread.sleep(2000);
-		CommonUtils.scrollPageDown(base.driver);
-		base.driver.findElement(By.xpath("(//img[@alt='Listing Photo'])[1]")).click();
+		WebElement searchBox=base.driver.findElement(By.xpath("(//input[@type='text'])[1]"));
+		searchBox.sendKeys("Mazda");
+		Thread.sleep(3000);
+		base.driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
+		base.driver.findElement(By.xpath("(//img[contains(@alt,'Listing Photo')])[1]")).click();
 		String img = CommonUtils.takeScreenShot(base.driver, "UsedCarLink");
 		stepTest.pass("I click on any existing car").addScreenCaptureFromPath(img);
-
+ 
 	}
+
 
 	@Then("^Car details should be displayed$")
 	public void all_following_details_should_be_displayed(DataTable dealData) throws Throwable {
+		
 		stepTest=extent.createTest("Car details should be displayed");
 		CommonUtils.scrollPageDown(base.driver);
 		List<List<String>> Values = dealData.raw();
+		try {
 		String numberPlate = base.driver.findElement(By.xpath("//label[contains(.,'Number plate')]")).getText();
 		if (numberPlate.contains(Values.get(0).get(0)))
 			System.out.println("Number plate Found: Test pass");
-		else
+		}
+		catch(Exception e) {
 			System.out.println("Number plate not Found: Test fail");
-
+			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
+			stepTest.fail("Body not Found:").addScreenCaptureFromPath(img);
+		}
+		
+		try {
 		String kilometres = base.driver.findElement(By.xpath("//label[contains(.,'Kilometres')]")).getText();
 		if (kilometres.contains(Values.get(0).get(1)))
 			System.out.println("Kilometres Found: Test pass");
-		else {
+		}catch(Exception e) {
 			System.out.println("Kilometres not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Kilometres not Found").addScreenCaptureFromPath(img);
 		}
+		try {
 		String body = base.driver.findElement(By.xpath("//label[contains(.,'Body')]")).getText();
 		if (body.contains(Values.get(0).get(2)))
 			System.out.println("Body Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Body not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Body not Found:").addScreenCaptureFromPath(img);
@@ -223,70 +235,86 @@ public class UsedCarsSteps extends TestBase {
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Seats not Found:").addScreenCaptureFromPath(img);
 		}
-		
+		try {
 		String fuelType = base.driver.findElement(By.xpath("//label[contains(.,'Fuel type')]")).getText();
 		if (fuelType.contains(Values.get(0).get(4)))
 			System.out.println("Fuel type Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Fuel type not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Fuel type not Found:").addScreenCaptureFromPath(img);
 		}
+		
+		try {
 		String engine = base.driver.findElement(By.xpath("//label[contains(.,'Engine')]")).getText();
 		if (engine.contains(Values.get(0).get(5)))
 			System.out.println("Engine Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Engine not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Engine not Found").addScreenCaptureFromPath(img);
 		}
+		
+		try {
 		String transmission = base.driver.findElement(By.xpath("//label[contains(.,'Transmission')]")).getText();
 		if (transmission.contains(Values.get(0).get(6)))
 			System.out.println("Transmission Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Transmission not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Transmission not Found").addScreenCaptureFromPath(img);
 		}
 
+		try {
 		String history = base.driver.findElement(By.xpath("//label[contains(.,'History')]")).getText();
 		if (history.contains(Values.get(0).get(7)))
 			System.out.println("History Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("History not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("History not Found").addScreenCaptureFromPath(img);
 		}
-
+		
+		try {
+			
+		
 		String registrationExpires = base.driver.findElement(By.xpath("//label[contains(.,'Registration expires')]"))
 				.getText();
 		if (registrationExpires.contains(Values.get(0).get(8)))
 			System.out.println("Registration expires Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Registration expires not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Registration expires not Found").addScreenCaptureFromPath(img);
 		}
 
+		try {
 		String wofExpires = base.driver.findElement(By.xpath("//label[contains(.,'WoF expires')]")).getText();
 		if (wofExpires.contains(Values.get(0).get(9)))
 			System.out.println("WoF expires Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("WoF expires not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("WoF expires not Found:").addScreenCaptureFromPath(img);
 		}
-
+		try {
+			
 		String modelDetail = base.driver.findElement(By.xpath("//h1[contains(.,'2016 Mazda 3')]")).getText();
 		if (modelDetail.contains("2016 Mazda 3"))
 			System.out.println("Model detail Found: Test pass");
-		else {
+		}
+		catch(Exception e) {
 			System.out.println("Model detail not Found: Test fail");
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Model detail not Found").addScreenCaptureFromPath(img);
 		}
-		 String img = CommonUtils.takeScreenShot(base.driver, "DetailOfCars");
-		stepTest.pass("Details Of Car").addScreenCaptureFromPath(img);
+		 
 
 	}
 

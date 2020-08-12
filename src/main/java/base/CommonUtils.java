@@ -18,11 +18,16 @@ public class CommonUtils extends TestBase{
     	JavascriptExecutor js = ((JavascriptExecutor) driver);
     	js.executeScript("arguments[0].style.backgroundColor = '"+color+"'", element);
     }
+	
 	public static void scrollPageDown(WebDriver driver){
     	JavascriptExecutor js = ((JavascriptExecutor) driver);
     	js.executeScript("window.scrollTo(0,600)");
     	//js.executeScript("scroll(0,600)");
     }
+	
+	
+	
+	
 	public static void ExtentReports() {
 		extent = new ExtentReports();
 		ExtentHtmlReporter htmlReporter= new ExtentHtmlReporter(prop.getProperty("ReportsPath")+"Report.html");

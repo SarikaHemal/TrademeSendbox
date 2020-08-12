@@ -68,24 +68,30 @@ public class UsedCarsSteps extends TestBase {
 			for (int j = 1; j <= 3; j++) {
 				WebElement addCar = base.driver
 						.findElement(By.xpath("//*[@id='makes']/tbody/tr[" + i + "]/td[" + j + "]/span"));
+				
 				String name = addCar.getText();
 				System.out.println(name);
+				
 
 				if (!name.contains("(0)")) {
+					
 					CommonUtils.drawBackgroundColor("red", addCar, base.driver);
 					System.out.println("Test pass listed car found");
 					String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 					stepTest.pass("Listed car").addScreenCaptureFromPath(img);
 					flag = true;
+					Assert.assertTrue(!name.contains("(0)"));
 					break;
 				}
 			}
 			if (flag)
 				break;
 			if (flag == false && count == rows) {
+				
 				System.out.println("Test fail can not find one listed car");
 				String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 				stepTest.fail("Can not fine one listed car").addScreenCaptureFromPath(img);
+				
 
 			}
 		}
@@ -117,14 +123,17 @@ public class UsedCarsSteps extends TestBase {
 					CommonUtils.drawBackgroundColor("red", car, base.driver);
 					System.out.println("Kias link found");
 					CommonUtils.drawBackgroundColor("yellow", carTotal, base.driver);
-
+					
 					if (carTotal1.contains("(0)")) {
+						
 						String img = CommonUtils.takeScreenShot(base.driver, "Kias");
 						stepTest.fail("Kia's car not exists").addScreenCaptureFromPath(img);
 						System.out.println("Test pass Kia's car not exists");
+						Assert.assertEquals("Kia's car not exists","(1)",carTotal.getText());
 						flag = true;
 						break;
 					}
+					
 
 				}
 				if (flag)
@@ -134,6 +143,7 @@ public class UsedCarsSteps extends TestBase {
 		}
 		String img = CommonUtils.takeScreenShot(base.driver, "ExistsCar");
 		stepTest.pass("End Step").addScreenCaptureFromPath(img);
+		
 	}
 
 	@When("^I click on Used cars link$")
@@ -143,7 +153,7 @@ public class UsedCarsSteps extends TestBase {
 		Thread.sleep(3000);
 		System.out.println(usedcars.getText());
 		CommonUtils.drawBackgroundColor("blue", usedcars, base.driver);
-		Assert.assertEquals("Used cars", usedcars.getText());
+		Assert.assertEquals("Usedcars link not found","Used cars",usedcars.getText());
 		if (usedcars.getText().equals("Used cars")) {
 			System.out.println("Used car link display");
 
@@ -213,7 +223,7 @@ public class UsedCarsSteps extends TestBase {
 			String img = CommonUtils.takeScreenShot(base.driver, "ListedCar");
 			stepTest.fail("Seats not Found:").addScreenCaptureFromPath(img);
 		}
-
+		
 		String fuelType = base.driver.findElement(By.xpath("//label[contains(.,'Fuel type')]")).getText();
 		if (fuelType.contains(Values.get(0).get(4)))
 			System.out.println("Fuel type Found: Test pass");

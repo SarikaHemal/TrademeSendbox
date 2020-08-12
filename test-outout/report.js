@@ -7,65 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 7477901400,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 4,
-  "name": "Check if at least one listing in the UsedCars category",
-  "description": "",
-  "id": "trademesendbox-usedcars-feature;check-if-at-least-one-listing-in-the-usedcars-category",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@Automate"
-    }
-  ]
-});
-formatter.step({
-  "line": 5,
-  "name": "I navigate to trademe sendbox website",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 6,
-  "name": "I click on Motors tab",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 7,
-  "name": "I can see at least one listed car",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
-});
-formatter.result({
-  "duration": 11890417400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_click_Motors_tab()"
-});
-formatter.result({
-  "duration": 4725822600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_can_see_at_least_one_list_car()"
-});
-formatter.result({
-  "duration": 1461683400,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1275131400,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 5239286200,
+  "duration": 8861859000,
   "status": "passed"
 });
 formatter.scenario({
@@ -101,125 +43,26 @@ formatter.match({
   "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
 });
 formatter.result({
-  "duration": 1777816500,
+  "duration": 2641487300,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.i_click_Motors_tab()"
 });
 formatter.result({
-  "duration": 2096084900,
+  "duration": 3143851800,
   "status": "passed"
 });
 formatter.match({
   "location": "UsedCarsSteps.kia_s_car_should_be_listed_in_categories()"
 });
 formatter.result({
-  "duration": 2408190900,
-  "status": "passed"
+  "duration": 2977639600,
+  "error_message": "org.junit.ComparisonFailure: Kia\u0027s car not exists expected:\u003c([1])\u003e but was:\u003c([0])\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat StepDefinitions.UsedCarsSteps.kia_s_car_should_be_listed_in_categories(UsedCarsSteps.java:132)\r\n\tat ✽.Then Kia’s car should be listed in categories(C:/RecruitITTest/TradeMeSendbox/src/main/java/Features/UsedcarFeature.feature:13)\r\n",
+  "status": "failed"
 });
 formatter.after({
-  "duration": 5265809500,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 5240244800,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 16,
-  "name": "Verify the details of Used car is displayed",
-  "description": "",
-  "id": "trademesendbox-usedcars-feature;verify-the-details-of-used-car-is-displayed",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 15,
-      "name": "@Automate"
-    }
-  ]
-});
-formatter.step({
-  "line": 17,
-  "name": "I navigate to trademe sendbox website",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 18,
-  "name": "I click on Motors tab",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 19,
-  "name": "I click on Used cars link",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "I click on any existing car",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 21,
-  "name": "Car details should be displayed",
-  "rows": [
-    {
-      "cells": [
-        "Number plate",
-        "Kilometres",
-        "Body",
-        "Seats",
-        "Fuel type",
-        "Engine",
-        "Transmission",
-        "History",
-        "Registration expires",
-        "WoF expires",
-        "Model detail"
-      ],
-      "line": 22
-    }
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_navigate_to_trademe_sendbox_website()"
-});
-formatter.result({
-  "duration": 3057376800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_click_Motors_tab()"
-});
-formatter.result({
-  "duration": 2492353900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_click_on_Used_cars_link()"
-});
-formatter.result({
-  "duration": 3354316900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.i_click_on_any_existing_car()"
-});
-formatter.result({
-  "duration": 3177940400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "UsedCarsSteps.all_following_details_should_be_displayed(DataTable)"
-});
-formatter.result({
-  "duration": 30985413100,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5040141800,
+  "duration": 5501115500,
   "status": "passed"
 });
 });

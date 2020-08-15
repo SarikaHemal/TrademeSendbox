@@ -3,11 +3,15 @@ package base;
 import java.io.File;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -21,9 +25,29 @@ public class CommonUtils extends TestBase{
 	
 	public static void scrollPageDown(WebDriver driver){
     	JavascriptExecutor js = ((JavascriptExecutor) driver);
-    	js.executeScript("window.scrollTo(0,600)");
+    	js.executeScript("window.scrollTo(0,400)");
     	//js.executeScript("scroll(0,600)");
     }
+	 
+	
+	public static void waitForElement(WebDriver driver,String locator,String locatorValue,int second) {
+		try {
+				
+		WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver,second).ignoring(StaleElementReferenceException.class);
+		if(locator=="xpath")
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorValue)));
+		if(locator=="id")
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locatorValue)));
+		if(locator=="cssSelector")
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locatorValue)));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+			
+		
+	}
 	
 	
 	

@@ -15,10 +15,10 @@ And I click on Used cars link
 Then Kia’s car should be listed in categories
 
 @Automate
-Scenario: Verify the details of Used car is displayed  
+Scenario: Verify the details of first existing Used car is displayed  
 Given I navigate to trademe sendbox website
 And I click on Motors tab
 And I click on Used cars link
-When I search first Mazda used car 
+When I click on first existing used car 
 Then Car details should be displayed
 |Number plate| Kilometres| Body | Seats | Fuel type| Engine | Transmission | History | Registration expires | WoF expires | Model detail |
